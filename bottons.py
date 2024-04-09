@@ -13,13 +13,25 @@ def get_main_buttons():
     return markup
 
 
-def balance():
+def balance_robo():
     markup = types.InlineKeyboardMarkup(row_width=1)
     buttons = [
         types.InlineKeyboardButton("5k", callback_data="robo5k"),
         types.InlineKeyboardButton("10k", callback_data="robo10k"),
         types.InlineKeyboardButton("15k", callback_data="robo15k"),
-        types.InlineKeyboardButton("25k",callback_data="robo25k"),
+        types.InlineKeyboardButton("25k", callback_data="robo25k"),
+    ]
+    markup.add(*buttons)
+    return markup
+
+
+def balance_alpari():
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    buttons = [
+        types.InlineKeyboardButton("5k", callback_data="alpari5k"),
+        types.InlineKeyboardButton("10k", callback_data="alpari10k"),
+        types.InlineKeyboardButton("15k", callback_data="alpari15k"),
+        types.InlineKeyboardButton("25k", callback_data="alpari25k"),
     ]
     markup.add(*buttons)
     return markup
