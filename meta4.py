@@ -21,7 +21,6 @@ names = [
 bot_token = "7130664339:AAFkbRrAeTE7OXbgcv8X-GHqaZydT3S6Cs8"
 bot = telebot.TeleBot(bot_token)
 
-brokers = 'fibogroups'
 
 
 @bot.message_handler(commands=["start"])
@@ -39,6 +38,7 @@ def forex(message):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("robo"))
 def handle_buy_callback(call):
+    bot.send_message(call.message.chat.id, "waiting")
     pyautogui.hotkey('win')
     time.sleep(2)
     pyautogui.write("roboForex MT4")
