@@ -310,13 +310,13 @@ def handle_buy_callback(call):
     pyautogui.hotkey('tab')
     time.sleep(0.5)
     balance = "0"
-    if call.data == "Forex4u5k":
+    if call.data == "forex4u5k":
         balance = "5000"
-    elif call.data == "Forex4u10k":
+    elif call.data == "forex4u10k":
         balance = "10000"
-    elif call.data == "Forex4u15k":
+    elif call.data == "forex4u15k":
         balance = "15000"
-    elif call.data == "Forex4u25k":
+    elif call.data == "forex4u25k":
         balance = "25000"
     else:
         bot.send_message(call.message.chat.id, "Sorry I didn't understand")
