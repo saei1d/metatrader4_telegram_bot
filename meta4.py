@@ -477,8 +477,8 @@ def handle_buy_callback(call):
     pyautogui.hotkey('tab')
 
     time.sleep(0.5)
-    pyautogui.click(x=742, y=580)
-    time.sleep(0.5)
+    pyautogui.click(x=775, y=708)
+    time.sleep(2)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
 
