@@ -45,6 +45,8 @@ def forex(message):
         bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_alpari5())
     elif message.text == "Forex4uMT5":
         bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_forex4u5())
+    elif message.text == "icmarketsMT5":
+        bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_forex4u5())
 
 ######################################
 #
