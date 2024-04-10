@@ -322,6 +322,8 @@ def handle_buy_callback(call):
         bot.send_message(call.message.chat.id, "Sorry I didn't understand")
         return False
 
+    time.sleep(0.5)
+    print(balance)
     pyautogui.write(balance)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
