@@ -569,13 +569,13 @@ def handle_buy_callback(call):
 
 
     balance = "0"
-    if call.data == "alpariMT55k":
+    if call.data == "icmarketsMT55k":
         balance = "5000"
-    elif call.data == "alpariMT510k":
+    elif call.data == "icmarketsMT510k":
         balance = "10000"
-    elif call.data == "alpariMT515k":
+    elif call.data == "icmarketsMT515k":
         balance = "15000"
-    elif call.data == "alpariMT525k":
+    elif call.data == "icmarketsMT525k":
         balance = "25000"
     else:
         bot.send_message(call.message.chat.id, "Sorry I didn't understand")
