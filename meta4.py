@@ -448,8 +448,6 @@ def handle_buy_callback(call):
     time.sleep(0.5)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
-    pyautogui.write(f'7161{code}')
-    time.sleep(0.5)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
     pyautogui.hotkey('tab')
