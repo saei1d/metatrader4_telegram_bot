@@ -722,7 +722,7 @@ def handle_buy_callback(call):
         bot.send_message(call.message.chat.id,
                          f'{data}',
                          reply_markup=get_main_buttons())
-
+    time.sleep(1)
     pyautogui.keyDown('alt')
     pyautogui.press('f4')
     pyautogui.keyUp('alt')  # Optional
