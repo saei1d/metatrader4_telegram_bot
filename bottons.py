@@ -9,7 +9,7 @@ def get_main_buttons():
         types.KeyboardButton("roboforexMT4"),
         types.KeyboardButton("AlpariMT5"),
         types.KeyboardButton("Forex4uMT5"),
-        types.KeyboardButton("roboforexMT5"),
+        types.KeyboardButton("icmarketsMT5"),
 
     ]
     markup.add(*buttons)
