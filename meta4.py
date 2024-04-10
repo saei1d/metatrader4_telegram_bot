@@ -14,7 +14,7 @@ def generate_random_code():
 
 
 def generate_random_codeMT5():
-    code = ''.join(random.choices('0123456789', k=7))
+    code = ''.join(random.choices('0123456789', k=6))
     return code
 
 
@@ -448,7 +448,7 @@ def handle_buy_callback(call):
     time.sleep(0.5)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
-    pyautogui.write(f'716{code}')
+    pyautogui.write(f'7161{code}')
     time.sleep(0.5)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
