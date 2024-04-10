@@ -307,8 +307,6 @@ def handle_buy_callback(call):
     time.sleep(0.5)
     pyautogui.hotkey('tab')
     time.sleep(0.5)
-    pyautogui.hotkey('tab')
-    time.sleep(0.5)
     balance = "0"
     if call.data == "forex4u5k":
         balance = "5000"
