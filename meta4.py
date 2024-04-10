@@ -22,7 +22,6 @@ bot_token = "7130664339:AAFkbRrAeTE7OXbgcv8X-GHqaZydT3S6Cs8"
 bot = telebot.TeleBot(bot_token)
 
 
-
 @bot.message_handler(commands=["start"])
 def start(message):
     bot.send_message(message.chat.id, "choose your broker", reply_markup=get_main_buttons())
@@ -144,7 +143,9 @@ def handle_buy_callback(call):
                          f'broker with balance = {broker} \n username = {username} \n password = {password}',
                          reply_markup=get_main_buttons())
 
-    pyautogui.click(x=1000, y=100)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')  # Optional
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("alpari"))
@@ -254,7 +255,10 @@ def handle_buy_callback(call):
                          f'broker with balance = {broker} \n username = {username} \n password = {password}',
                          reply_markup=get_main_buttons())
 
-    pyautogui.click(x=1000, y=100)
+
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')  # Optional
 
 
 bot.infinity_polling(skip_pending=True)
