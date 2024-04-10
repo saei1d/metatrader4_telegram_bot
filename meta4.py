@@ -626,6 +626,111 @@ def handle_buy_callback(call):
 
 
 
+@bot.callback_query_handler(func=lambda call: call.data.startswith("forex4uMT5"))
+def handle_buy_callback(call):
+    pyautogui.hotkey('win')
+    time.sleep(2)
+    pyautogui.write("Forex4you MT5")
+    time.sleep(2)
+    pyautogui.hotkey('enter')
+    time.sleep(5)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f')
+    pyautogui.keyUp('alt')  # Optional
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+
+    pyautogui.hotkey('enter')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+    pyautogui.press('down')
+    time.sleep(0.3)
+
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('enter')
+    time.sleep(0.5)
+    pyautogui.hotkey('enter')
+    time.sleep(0.5)
+    random_name = random.choice(names)
+    pyautogui.write(random_name)
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    pyautogui.write(random_name)
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    code = generate_random_codeMT5()
+    pyautogui.write(f'{random_name}.{code}@gmail.com')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+
+
+    balance = "0"
+    if call.data == "forex4uMT55k":
+        balance = "5000"
+    elif call.data == "forex4uMT510k":
+        balance = "10000"
+    elif call.data == "forex4uMT515k":
+        balance = "15000"
+    elif call.data == "forex4uMT525k":
+        balance = "25000"
+    else:
+        bot.send_message(call.message.chat.id, "Sorry I didn't understand")
+        return False
+
+    pyautogui.write(balance)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.click(x=740, y=667)
+    time.sleep(2)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('enter')
+    time.sleep(4)
+
+    pyautogui.click(x=813, y=610)
+    time.sleep(1)
+    data = clipboard.paste()
+    print(data)
+
+    if data is not None:
+        bot.send_message(call.message.chat.id,
+                         f'{data}',
+                         reply_markup=get_main_buttons())
+
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')  # Optional
+
+
+
+
+
 
 
 
