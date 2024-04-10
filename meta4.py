@@ -33,6 +33,8 @@ def forex(message):
         bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_robo())
     elif message.text == "Alpari":
         bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_alpari())
+    elif message.text == "Forex4u":
+            bot.send_message(message.chat.id, "choose your balance", reply_markup=balance_forex4u())
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("robo"))
