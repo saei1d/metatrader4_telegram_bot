@@ -505,6 +505,7 @@ def handle_buy_callback(call):
     # pyautogui.hotkey('tab')
     # time.sleep(0.5)
     # pyautogui.hotkey('ctrl', 'c')
+    pyautogui.click(x=813, y=610)
     data = clipboard.paste()
     print(data)
     # time.sleep(0.5)
