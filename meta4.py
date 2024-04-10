@@ -261,4 +261,125 @@ def handle_buy_callback(call):
     pyautogui.keyUp('alt')  # Optional
 
 
+
+
+
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith("forex"))
+def handle_buy_callback(call):
+    bot.send_message(call.message.chat.id, "waiting")
+    pyautogui.hotkey('win')
+    time.sleep(2)
+    pyautogui.write("Fo")
+    time.sleep(2)
+    pyautogui.hotkey('enter')
+    time.sleep(5)
+    pyautogui.click(x=22, y=45)
+    time.sleep(1)
+    pyautogui.click(x=22, y=187)
+
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(1)
+    pyautogui.hotkey('enter')
+    time.sleep(1)
+    pyautogui.hotkey('enter')
+    time.sleep(1)
+    random_name = random.choice(names)
+    pyautogui.write(random_name)
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(1)
+    code = generate_random_code()
+    pyautogui.write(f'{random_name}.{code}@gmail.com')
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(1)
+    pyautogui.write("+1")
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(1)
+    pyautogui.write(code)
+    time.sleep(1)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    balance = "0"
+    if call.data == "robo5k":
+        balance = "5000"
+    elif call.data == "robo10k":
+        balance = "10000"
+    elif call.data == "robo15k":
+        balance = "15000"
+    elif call.data == "robo25k":
+        balance = "25000"
+    else:
+        bot.send_message(call.message.chat.id, "Sorry I didn't understand")
+        return False
+
+    pyautogui.write(balance)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.click(x=815, y=654)
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('enter')
+    time.sleep(4)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl', 'c')
+    password = clipboard.paste()
+    print(password)
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl', 'c')
+    username = clipboard.paste()
+    print(username)
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab')
+    time.sleep(0.5)
+    pyautogui.hotkey('enter')
+    broker = call.data
+    if username and password is not None:
+        bot.send_message(call.message.chat.id,
+                         f'broker with balance = {broker} \n username = {username} \n password = {password}',
+                         reply_markup=get_main_buttons())
+
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')  # Optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bot.infinity_polling(skip_pending=True)
